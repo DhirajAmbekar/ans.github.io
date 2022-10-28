@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <title>Calculator</title>
+</head>
+<body>
+  <h1>CALCULATOR</h1>
+
+   <div class="main">
+    <input type="text" id="input1">
+  <table>
+    <tr>
+        <td><button class="button" onclick="print(7)" >7</button></td>
+        <td><button class="button"  onclick="print(8)">8</button></td>
+        <td><button class="button"  onclick="print(9)" >9</button></td>
+        <td><button class="button"  onclick="remove()" >C</button></td>
+    </tr>
+    <tr>
+        <td><button class="button"  onclick="print(4)" >4</button></td>
+        <td><button class="button"  onclick="print(5)" >5</button></td>
+        <td><button class="button"  onclick="print(6)" >6</button></td>
+        <td><button class="button"  onclick="print('*')" >X</button></td>
+    </tr>
+    <tr>
+        <td><button class="button"  onclick="print(1)" >1</button></td>
+        <td><button class="button"  onclick="print(2)" >2</button></td>
+        <td><button class="button"  onclick="print(3)">3</button></td>
+        <td><button class="button"  onclick="print('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button class="button"  onclick="print(0)" >0</button></td>
+        <td><button class="button"  onclick="print('.')">.</button></td>
+        <td><button class="button"  onclick="result()" >=</button></td>
+        <td><button class="button"  onclick="print('+')" >+</button></td>
+    </tr>
+    <tr>
+        <th  colspan="9"><button class="backspace" onclick="back()" >[x]</button></th>
+    </tr>
+  </table>
+  
+</div> 
+
+
+<script>
+// var screen = "";
+// var buttons = document.querySelectorAll(".button");
+// Array.from(buttons).forEach((button)=>{
+//     button.addEventListener("print",(e)=>{
+//         if(e.target.innerHTML == "="){
+//             screen = eval(screen);
+//             document.getElementById("input1").value = screen    
+//         }
+//         else if (e.target.innerHTML == "C"){
+//             document.getElementById("input1").value = "";
+//          }
+//         else{
+//         screen = screen + e.target.innerHTML
+//         document.getElementById("input1").value = screen ;
+//     }
+//     })
+// })
+
+
+
+function print(num){
+    document.getElementById("input1").value += num;
+}
+function result(){
+    document.getElementById("input1").value = eval( document.getElementById("input1").value ) ;
+}
+function remove(){
+    document.getElementById("input1").value = " " ; 
+}
+function back(){
+    document.getElementById("input1").value = document.getElementById("input1").value.slice(0,-1); 
+}
+
+
+
+</script>
+
+</body>
+</html>
